@@ -8,5 +8,11 @@
     <artifactId>demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    
+    <dependencies>
+        <dependency>
+            <groupId>com.istargazer</groupId>
+            <artifactId>algorithm</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 </project>
