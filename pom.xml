@@ -13,6 +13,12 @@
             <groupId>com.istargazer</groupId>
             <artifactId>algorithm</artifactId>
             <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openjdk.jol</groupId>
+            <artifactId>jol-core</artifactId>
+            <version>0.10</version>
         </dependency>
     </dependencies>
 </project>
