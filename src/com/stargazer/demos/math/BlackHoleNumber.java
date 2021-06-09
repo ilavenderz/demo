@@ -12,7 +12,7 @@ public class BlackHoleNumber {
         for (int i = 10000; i < 99999; i++) {
             long temp = BlackHole.calcBlackHoleNumber(i);
             if(result.containsKey(temp)){
-                result.put(temp,result.get(temp) + "," + String.valueOf(i));
+                result.put(temp,result.get(temp) + "," + i);
             } else {
                 result.put(temp,String.valueOf(i));
             }

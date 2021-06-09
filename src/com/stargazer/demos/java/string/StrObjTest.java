@@ -12,6 +12,7 @@ public class StrObjTest {
         System.out.println("s2==s5 : " + (s2 == s5));
 
         String s6=s1.intern();
+        System.out.println("s6 : " + s6);
         System.out.println("s1==s6 : " + (s1 == s6));//返回false
     }
 }

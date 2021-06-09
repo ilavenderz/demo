@@ -28,15 +28,20 @@ public class ReferenctTest {
         SoftReference<?> softReference = new SoftReference<String>(a);
         //对heap中的对象建立弱引用，此时heap中的对象仍然是强可及
         WeakReference<?> weakReference = new WeakReference<String>(a);
-        System.out.println("强引用：" + a + "\n软引用" + softReference.get() + "\n弱引用" + weakReference.get() + "\n");
+        System.out.println("1强引用" + a + "\n软引用" + softReference.get() + "\n弱引用" + weakReference.get() + "\n");
         a = null;//heap中的对象从强可及到软可及
-        System.out.println("强引用：" + a + "\n软引用" + softReference.get() + "\n弱引用" + weakReference.get() + "\n");
+        System.out.println("2强引用" + a + "\n软引用" + softReference.get() + "\n弱引用" + weakReference.get() + "\n");
         System.gc();
-        System.out.println("强引用：" + a + "\n软引用" + softReference.get() + "\n弱引用" + weakReference.get() + "\n");
+        System.out.println("3强引用" + a + "\n软引用" + softReference.get() + "\n弱引用" + weakReference.get() + "\n");
+        a = (String) softReference.get();
+        System.out.println("4强引用" + a + "\n软引用" + softReference.get() + "\n弱引用" + weakReference.get() + "\n");
         softReference.clear();//heap中对象从软可及变成弱可及,此时调用System.gc()，
-        System.out.println("强引用：" + a + "\n软引用" + softReference.get() + "\n弱引用" + weakReference.get() + "\n");
+        System.out.println("5强引用" + a + "\n软引用" + softReference.get() + "\n弱引用" + weakReference.get() + "\n");
+        a = null;
+        softReference.clear();//heap中对象从软可及变成弱可及,此时调用System.gc()，
+        System.out.println("6强引用" + a + "\n软引用" + softReference.get() + "\n弱引用" + weakReference.get() + "\n");
         System.gc();
-        System.out.println("强引用：" + a + "\n软引用" + softReference.get() + "\n弱引用" + weakReference.get() + "\n");
+        System.out.println("7强引用" + a + "\n软引用" + softReference.get() + "\n弱引用" + weakReference.get() + "\n");
     }
 
     public static void main(String[] args) {
